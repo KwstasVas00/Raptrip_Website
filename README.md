@@ -12,7 +12,7 @@ HTML<br>
 CSS<br>
 JavaScript<br>
 
-📱 Features
+📱 Features<br>
 Responsive design (optimized for desktop, laptop, tablet, and mobile devices)<br>
 User-friendly interface (UI)<br>
 Navigation with internal hyperlinks<br>
