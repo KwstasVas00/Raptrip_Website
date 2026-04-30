@@ -560,12 +560,17 @@ event-card {
   align-items: flex-start;
 }
 
+
+
 .event-info {
-  position: absolute;
-  left: 25px;   /* όσο είναι το padding σου */
-  bottom: 25px;
-  width: 200px; /* ίδιο περίπου με την αφίσα */
+  margin-top: 15px;
 }
+
+.event-content {
+  display: flex;
+  flex-direction: column;
+}
+
 .event-card {
   position: relative;
 }
