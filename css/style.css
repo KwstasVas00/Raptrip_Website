@@ -389,7 +389,8 @@ body {
 }
 
 /* ================= LIVE EVENTS SECTION ================= */
-.live-events-section {
+
+/* .live-events-section {
   background: var(--bg-dark);
 }
 
@@ -476,6 +477,132 @@ body {
   background: transparent;
   color: var(--accent);
 }
+*/
+
+.event-card {
+  display: flex;
+  gap: 25px;
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  transition: var(--transition);
+}
+
+.event-card:hover {
+  transform: translateY(-10px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ΑΦΙΣΑ */
+.event-poster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.event-poster img {
+  width: 200px;
+  height: auto;
+  border-radius: var(--radius-md);
+  margin-bottom: 10px;
+}
+
+/* ΗΜΕΡΟΜΗΝΙΑ */
+.event-date {
+  background: var(--accent);
+  color: var(--text);
+  padding: 10px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  width: 100%;
+}
+
+.event-date .day {
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+.event-date .month {
+  font-size: 1rem;
+}
+
+/* ΔΕΞΙΑ ΠΛΕΥΡΑ */
+.event-content {
+  flex: 1;
+}
+
+.event-content h3 {
+  color: var(--accent);
+  margin-bottom: 10px;
+}
+
+.event-description {
+  color: var(--text-light);
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
+
+/* INFO */
+.event-info p {
+  margin-bottom: 8px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.event-info i {
+  color: var(--accent);
+}
+
+event-card {
+  align-items: flex-start;
+}
+
+.event-info {
+  position: absolute;
+  left: 25px;   /* όσο είναι το padding σου */
+  bottom: 25px;
+  width: 200px; /* ίδιο περίπου με την αφίσα */
+}
+.event-card {
+  position: relative;
+}
+
+.live-events-section {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+
+/* RESPONSIVE (για κινητά) */
+@media (max-width: 768px) {
+  .event-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .event-poster img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .event-info {
+    position: static;
+    width: 100%;
+    margin-top: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .event-info p {
+    justify-content: center;
+  }
+}
+
 
 /* ================= TICKETS SECTION ================= */
 /*.tickets-section {
