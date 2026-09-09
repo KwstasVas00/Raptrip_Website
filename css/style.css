@@ -659,46 +659,93 @@ body {
 }
 
 .gallery-item {
-  position: relative;
+  display: flex;
+  flex-direction: column;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  height: 250px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  transition: var(--transition);
 }
 
-.gallery-item img {
+.gallery-item:hover {
+  border-color: rgba(255, 123, 0, 0.35);
+  box-shadow: var(--shadow-lg);
+}
+
+.video-thumb {
+  position: relative;
+  display: block;
+  height: 200px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.video-thumb img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   transition: var(--transition);
 }
 
-.gallery-item:hover img {
-  transform: scale(1.1);
+.gallery-item:hover .video-thumb img {
+  transform: scale(1.08);
+}
+
+/* Dark it slightly so the play button always reads clearly */
+.video-thumb::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.45) 100%);
+  pointer-events: none;
+}
+
+.play-button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 42px;
+  background: var(--secondary);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.5);
+  transition: var(--transition);
+  z-index: 1;
+}
+
+.play-button i {
+  color: #fff;
+  font-size: 1.1rem;
+  margin-left: 3px;
+}
+
+.gallery-item:hover .play-button {
+  background: var(--accent);
+  transform: translate(-50%, -50%) scale(1.12);
 }
 
 .gallery-caption {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0, 0, 0, 0.8);
-  padding: 20px;
-  transform: translateY(100%);
-  transition: var(--transition);
-}
-
-.gallery-item:hover .gallery-caption {
-  transform: translateY(0);
+  padding: 16px 20px 20px;
 }
 
 .gallery-caption h4 {
   color: var(--accent);
   margin-bottom: 5px;
+  font-size: 1.02rem;
 }
 
 .gallery-caption p {
   color: var(--text-light);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+}
+
+.gallery-caption p:empty {
+  display: none;
 }
 
 .testimonials {
@@ -1368,5 +1415,3 @@ footer {
     margin-left: -65px;
   }
 }
-
-
